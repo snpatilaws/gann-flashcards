@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>Gann Flashcards</title>
+
+<!-- iOS "Add to Home Screen" support -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Gann Cards">
+<meta name="theme-color" content="#0f1424">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<link rel="icon" href="data:image/png;base64,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">
+
+<style>
+  :root{
+    --bg: #0f1424;
+    --bg2: #161d33;
+    --card: #1b2440;
+    --card-back: #21306e;
+    --gold: #e8b04b;
+    --gold-dim: #8a6a2a;
+    --text: #f2ede0;
+    --text-dim: #9aa3c0;
+    --green: #4caf7d;
+    --red: #d9695f;
+    --safe-top: env(safe-area-inset-top, 0px);
+    --safe-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  *{ box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html, body{
+    margin:0; padding:0; height:100%;
+    background: radial-gradient(circle at 50% 0%, #1a2242 0%, var(--bg) 60%);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", Georgia, serif;
+    overflow: hidden;
+    overscroll-behavior: none;
+  }
+  #app{
+    display:flex;
+    flex-direction:column;
+    height:100%;
+    padding-top: calc(var(--safe-top) + 10px);
+    padding-bottom: calc(var(--safe-bottom) + 12px);
+  }
+
+  header{
+    padding: 4px 16px 10px;
+    text-align:center;
+  }
+  header h1{
+    margin:0;
+    font-size: 1.05rem;
+    letter-spacing: 0.06em;
+    color: var(--gold);
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  header .sub{
+    margin-top:2px;
+    font-size: 0.72rem;
+    color: var(--text-dim);
+  }
+
+  .controls{
+    display:flex;
+    gap:8px;
+    padding: 8px 14px;
+    align-items:center;
+  }
+  select#deckSelect{
+    flex: 1 1 auto;
+    background: var(--card);
+    color: var(--text);
+    border: 1px solid #333d5e;
+    border-radius: 10px;
+    padding: 9px 10px;
+    font-size: 0.85rem;
+    -webkit-appearance:none;
+    appearance:none;
+  }
+  .iconbtn{
+    flex: 0 0 auto;
+    width:38px; height:38px;
+    border-radius: 10px;
+    border: 1px solid #333d5e;
+    background: var(--card);
+    color: var(--text);
+    font-size: 1rem;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .iconbtn:active{ background: var(--card-back); }
+
+  .progresswrap{
+    padding: 0 16px 6px;
+  }
+  .progressbar{
+    height:6px;
+    background: #232c4d;
+    border-radius: 4px;
+    overflow:hidden;
+  }
+  .progressbar > div{
+    height:100%;
+    background: linear-gradient(90deg, var(--gold-dim), var(--gold));
+    width:0%;
+    transition: width 0.25s ease;
+  }
+  .statsline{
+    display:flex;
+    justify-content: space-between;
+    font-size: 0.68rem;
+    color: var(--text-dim);
+    margin-top: 5px;
+  }
+  .statsline b{ color: var(--text); }
+  .statsline .known{ color: var(--green); }
+  .statsline .learning{ color: var(--red); }
+
+  .stage{
+    flex: 1 1 auto;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding: 6px 20px;
+    perspective: 1400px;
+    position:relative;
+    touch-action: pan-y;
+  }
+  .cardslot{
+    width: 100%;
+    max-width: 440px;
+    height: 100%;
+    max-height: 480px;
+    position:relative;
+  }
+  .card{
+    position:absolute;
+    inset:0;
+    border-radius: 22px;
+    transform-style: preserve-3d;
+    transition: transform 0.45s cubic-bezier(.4,.2,.2,1), left 0.3s ease, opacity 0.3s ease;
+    cursor: pointer;
+    will-change: transform;
+  }
+  .card.flipped{ transform: rotateY(180deg); }
+  .face{
+    position:absolute;
+    inset:0;
+    border-radius: 22px;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    display:flex;
+    flex-direction:column;
+    padding: 26px 24px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.45), inset 0 0 0 1px rgba(232,176,75,0.18);
+  }
+  .face.front{
+    background: linear-gradient(160deg, var(--card) 0%, #141b34 100%);
+  }
+  .face.back{
+    background: linear-gradient(160deg, var(--card-back) 0%, #16204a 100%);
+    transform: rotateY(180deg);
+  }
+  .face .tag{
+    align-self:flex-start;
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gold);
+    background: rgba(232,176,75,0.12);
+    border: 1px solid rgba(232,176,75,0.35);
+    padding: 4px 10px;
+    border-radius: 999px;
+    margin-bottom: 14px;
+  }
+  .face .label{
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 8px;
+  }
+  .face .body{
+    flex:1;
+    display:flex;
+    align-items:center;
+    font-size: 1.18rem;
+    line-height: 1.45;
+    overflow-y:auto;
+  }
+  .face.back .body{
+    font-size: 1.05rem;
+    color: #f5f1e6;
+  }
+  .face .hint{
+    text-align:center;
+    font-size: 0.68rem;
+    color: var(--text-dim);
+    margin-top: 10px;
+  }
+
+  .gradebar{
+    display:flex;
+    gap: 10px;
+    padding: 12px 20px 4px;
+    max-width: 440px;
+    margin: 0 auto;
+    width:100%;
+  }
+  .grade{
+    flex:1;
+    padding: 13px 10px;
+    border-radius: 14px;
+    border: none;
+    font-size: 0.85rem;
+    font-weight:600;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+    opacity: 0;
+    pointer-events:none;
+    transform: translateY(6px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+  .gradebar.show .grade{ opacity:1; pointer-events:auto; transform: translateY(0); }
+  .grade.learning{ background: rgba(217,105,95,0.16); color: var(--red); border: 1px solid rgba(217,105,95,0.4); }
+  .grade.known{ background: rgba(76,175,125,0.16); color: var(--green); border: 1px solid rgba(76,175,125,0.4); }
+  .grade:active{ transform: scale(0.96); }
+
+  .navrow{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap: 22px;
+    padding: 10px 20px 2px;
+  }
+  .navbtn{
+    background:none;
+    border:none;
+    color: var(--text-dim);
+    font-size: 1.4rem;
+    padding: 8px 14px;
+  }
+  .navbtn:active{ color: var(--gold); }
+  .counter{
+    font-size: 0.78rem;
+    color: var(--text-dim);
+    min-width: 64px;
+    text-align:center;
+  }
+  .shufflebtn{
+    background:none; border:none; color: var(--text-dim); font-size: 1.1rem;
+  }
+
+  .toast{
+    position:fixed;
+    left:50%; bottom: 90px;
+    transform: translateX(-50%) translateY(20px);
+    background: #1b2440;
+    border: 1px solid var(--gold-dim);
+    color: var(--text);
+    padding: 10px 18px;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    opacity:0;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    pointer-events:none;
+    z-index:20;
+  }
+  .toast.show{ opacity:1; transform: translateX(-50%) translateY(0); }
+
+  .done{
+    text-align:center;
+    padding: 20px;
+    color: var(--text-dim);
+    font-size: 0.9rem;
+  }
+</style>
+</head>
+<body>
+<div id="app">
+  <header>
+    <h1>Gann Flashcards</h1>
+    <div class="sub">W.D. Gann Master Stock Market Course</div>
+  </header>
+
+  <div class="controls">
+    <select id="deckSelect"></select>
+    <button class="iconbtn" id="shuffleTop" title="Shuffle">&#128256;</button>
+    <button class="iconbtn" id="resetBtn" title="Reset progress">&#8635;</button>
+  </div>
+
+  <div class="progresswrap">
+    <div class="progressbar"><div id="progressFill"></div></div>
+    <div class="statsline">
+      <span id="deckCountLabel">0 cards</span>
+      <span><span class="known" id="knownCount">0</span> known &middot; <span class="learning" id="learningCount">0</span> learning</span>
+    </div>
+  </div>
+
+  <div class="stage" id="stage">
+    <div class="cardslot" id="cardslot"></div>
+  </div>
+
+  <div class="gradebar" id="gradebar">
+    <button class="grade learning" id="gradeLearning">&#10060; Still learning</button>
+    <button class="grade known" id="gradeKnown">&#9989; Got it</button>
+  </div>
+
+  <div class="navrow">
+    <button class="navbtn" id="prevBtn">&#8592;</button>
+    <div class="counter" id="counter">1 / 1</div>
+    <button class="navbtn" id="nextBtn">&#8594;</button>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const FLASHCARDS = [{"c": "Trading Rules & Risk", "q": "How much of your trading capital should you risk on any single trade?", "a": "Never more than 10% of your total capital."}, {"c": "Trading Rules & Risk", "q": "What should you do after one or two losing trades in a row?", "a": "Reduce your trading unit size going forward."}, {"c": "Trading Rules & Risk", "q": "What is Gann's rule about adding to a losing position?", "a": "Never “average a loss” — only add to positions that are already profitable and moving in your favor."}, {"c": "Trading Rules & Risk", "q": "When should a stop-loss order be placed?", "a": "At the moment the trade is made, never added later — capital and profits must be protected at all times."}, {"c": "Trading Rules & Risk", "q": "Where is the safest place to put a stop-loss: below a single day's low, or below the low of a swing?", "a": "Below the low of a swing (not a single day's low); on weekly/monthly charts, place it above old tops or below old bottoms, and prefer levels based on closing prices over intraday extremes."}, {"c": "Trading Rules & Risk", "q": "About how much capital should you allow per 100-share trading unit?", "a": "About $3,000, risking no more than 3 points ($300) on the initial trade."}, {"c": "Trading Rules & Risk", "q": "How should each new pyramid addition compare in size to the trade before it?", "a": "Half the size — each addition is half of the prior unit, so the largest risk is always taken on the very first trade."}, {"c": "Trading Rules & Risk", "q": "When should you NOT begin pyramiding a position?", "a": "Not until the stock is in a strong (or weak) position on the angles, or has broken out of its trading range by crossing old tops or breaking old bottoms."}, {"c": "Trading Rules & Risk", "q": "What should you do every time a stop-loss is caught, under the mechanical Overnight Chart method?", "a": "Reverse your position and double your trading size (unless there's no nearby top/bottom to protect the new position with a stop)."}, {"c": "Trading Rules & Risk", "q": "What are the four requirements Gann lists for success in speculation?", "a": "Knowledge, Patience, Courage, and Study/hard work."}, {"c": "Trading Rules & Risk", "q": "What is Gann's overarching rule for deciding when to trade?", "a": "“Never guess. Trade on mathematical indications only,” with a stop never more than 3 points away."}, {"c": "Trading Rules & Risk", "q": "When should you simply not be trading a stock at all?", "a": "When it's stuck in a narrow range (3-5 points) without breaking a previous bottom or crossing a previous top, however long that lasts."}, {"c": "Trading Rules & Risk", "q": "Trading Rule 1 for buying stocks — what does it say?", "a": "Buy at new high prices or old top levels."}, {"c": "Trading Rules & Risk", "q": "What must always accompany a trade, per Gann's Rule 6?", "a": "A stop-loss order, placed at the time the trade is made, to protect capital and profits at all times."}, {"c": "Trading Rules & Risk", "q": "What's the safest of the three classic buying points after a downtrend?", "a": "Buying on a secondary reaction after price has already crossed previous weekly tops and the rally exceeds the largest decline-rally of the prior bear move."}, {"c": "Trading Rules & Risk", "q": "Why is it risky to trade at an old top or bottom the 4th time price returns to it?", "a": "Because price nearly always breaks through on the fourth test, whereas the 1st-3rd tests are comparatively safe."}, {"c": "Trading Rules & Risk", "q": "Roughly how many consecutive stop-losses would wipe out capital if you never risk more than 10% per trade?", "a": "About 10 consecutive losses."}, {"c": "Trading Rules & Risk", "q": "In fast, wide-fluctuation markets (stocks above $100), how far apart should pyramid trades be spaced, compared to the normal 5-point spacing?", "a": "7-10 points apart instead of 5."}, {"c": "Trend & Chart Reading", "q": "What's the fundamental rule for confirming an uptrend is intact?", "a": "The stock must keep making higher bottoms and higher tops (mirror rule: lower tops and lower bottoms confirm a downtrend)."}, {"c": "Trend & Chart Reading", "q": "When do you switch from a Green trend line to a Red trend line?", "a": "The first week a lower bottom than the previous week is made."}, {"c": "Trend & Chart Reading", "q": "What's the core buy/sell signal using trend-line color?", "a": "BUY when the Red trend line changes to Green; SELL when the Green trend line changes to Red."}, {"c": "Trend & Chart Reading", "q": "Name the four bottom-formation types Gann describes.", "a": "Single ‘V’ (sharp) bottom, ‘U’ (flat) bottom, ‘W’ (double) bottom, and ‘WV’/‘WW’ (triple/quadruple) bottoms."}, {"c": "Trend & Chart Reading", "q": "What is the 'Breakaway Point'?", "a": "The point where price breaks out of an accumulation or distribution range — trading right at this point produces fast, large profits."}, {"c": "Trend & Chart Reading", "q": "How many sections/legs does a typical Bull or Bear Campaign run in?", "a": "3 to 4 sections (advance, reaction, advance, reaction), with the 3rd or 4th section usually marking the culmination."}, {"c": "Trend & Chart Reading", "q": "What's the 'space movement' rule for spotting a change in the main trend?", "a": "The first time a reaction/rally exceeds the greatest previous reaction/rally (after 3+ sections have run), the main trend has changed or will soon change."}, {"c": "Trend & Chart Reading", "q": "What's the 'time period' rule for spotting a change in trend?", "a": "When a reaction's duration exceeds the greatest previous reaction's duration (after 3-4 sections), consider the main trend changed."}, {"c": "Trend & Chart Reading", "q": "What happens to rallies/reactions near the very end of a Bull or Bear campaign?", "a": "They get progressively smaller (shrinking) right before the final reversal — a sign of exhaustion."}, {"c": "Trend & Chart Reading", "q": "Why is the closing price considered the most important price of a day or week?", "a": "Because it shows the net gain or loss for the period, regardless of the intraday or intraweek range."}, {"c": "Trend & Chart Reading", "q": "What's the 'range of bottoms/tops' rule for double or triple tops/bottoms?", "a": "They typically lie within a 1-3 point range of each other; a break of more than 3 full points signals a stronger continuation of the trend."}, {"c": "Trend & Chart Reading", "q": "How is a swing chart built?", "a": "Move the swing line up to each week's high as long as prices make higher highs; the first time a prior week's low is broken, drop the line to that low and continue down until a week makes both a higher top and higher bottom, reversing the line back up."}, {"c": "Trend & Chart Reading", "q": "What warning does it give when a stock makes higher yearly bottoms for several years, then a lower bottom than the year before?", "a": "It's a warning sign of reversal that may mark the start of a long down cycle (mirror rule applies to lower tops in a bear market)."}, {"c": "Trend & Chart Reading", "q": "In the last stage of a Bull Market, what happens to reactions as the top approaches?", "a": "They get progressively smaller right before a sharp reversal (mirror: shrinking rallies near a bear-market bottom)."}, {"c": "Trend & Chart Reading", "q": "How long do minor Bull-Market reactions typically run?", "a": "3-4 weeks (occasionally only 2, rarely 6-7); a break under the 3rd/4th week's bottom warns of a larger trend change."}, {"c": "Trend & Chart Reading", "q": "What does Gann mean by 'cross currents' in the market?", "a": "When some stocks decline while others advance at the same time — study individual stocks and their industry groups separately to tell which is which."}, {"c": "Trend & Chart Reading", "q": "Why does Gann prefer buying higher-priced, active stocks over cheap, low-priced ones?", "a": "Low-priced stocks often stay range-bound for 5-10+ years and can decline to new lows; it's better to buy stocks that break into new high ground and show real activity."}, {"c": "Trend & Chart Reading", "q": "What does Gann say about ever thinking a stock is 'too high' to buy or 'too low' to sell?", "a": "A stock is never too high to buy as long as the trend is up, and never too low to sell short as long as the trend is down."}, {"c": "Trend & Chart Reading", "q": "How long does a sharp decline following a rapid advance typically last?", "a": "One to seven weeks — it corrects an overbought position and sets up for a secondary advance."}, {"c": "Trend & Chart Reading", "q": "Which is a more accurate market-trend indicator: the Dow-Jones 30 Industrials, or the 'Dollar Trend' (total dollar value of all NYSE stocks)?", "a": "The Dollar Trend, because it covers nearly the entire market rather than a small 30-stock sample."}, {"c": "Resistance Levels", "q": "What is the single most important support/resistance level in Gann's system?", "a": "The 50% (half-way) point of a price range — sometimes called the 'gravity center.'"}, {"c": "Resistance Levels", "q": "How do you find the classic 1/8 resistance points of a move?", "a": "Take the extreme high and low, get the range, and divide it by 8."}, {"c": "Resistance Levels", "q": "Besides eighths, what other fraction division is especially strong on wide moves?", "a": "Thirds — the 1/3 and 2/3 points of the range."}, {"c": "Resistance Levels", "q": "What is 'lost motion' in Gann's resistance-level theory?", "a": "The tendency of price to overshoot a resistance level by an average of about 1-7/8 points (rarely a full 3 points) before settling back, like a pendulum overshooting its center."}, {"c": "Resistance Levels", "q": "What core premise underlies all of Gann's resistance-level rules?", "a": "'Every stock makes a top or bottom on some exact mathematical point in proportion to some previous high or low level' — there is no chance in markets, only proportion."}, {"c": "Resistance Levels", "q": "Why are multiples of 9 considered strong resistance levels?", "a": "Because 9 is the highest single digit — 9, 18, 27, 36, 45, 54, 63, 72, 81, 90, 99... are all treated as strong resistance."}, {"c": "Resistance Levels", "q": "Why are multiples of 12 also treated as strong resistance?", "a": "Because they're tied to the 12 months of the year — 12, 24, 36, 48... up through 144."}, {"c": "Resistance Levels", "q": "What happens, in resistance-level terms, the 4th time a stock reaches the same level?", "a": "It will nearly always break through, making a new higher top or lower bottom."}, {"c": "Resistance Levels", "q": "What is the 'master number' 45, and why is it significant?", "a": "It contains all digits 1-9 combined, equals 1/8 of 360, and equals 5×9 — fast market moves often culminate in the 45th month/week/day."}, {"c": "Resistance Levels", "q": "Why are 49 and 84 called 'fatal' or strong resistance numbers?", "a": "49 = 7×7 and 84 = 7×12 (the 7-year cycle) — both tie back to the Biblical significance of the number 7."}, {"c": "Resistance Levels", "q": "In which years of a 10-year cycle do stocks tend to make their best advances?", "a": "The 8th and 9th years."}, {"c": "Resistance Levels", "q": "Which year of a cycle is prone to a panicky decline?", "a": "The 7th year."}, {"c": "Resistance Levels", "q": "What is the 'square of numbers' resistance rule?", "a": "The square of each integer (4, 9, 16, 25, 36, 49, 64, 81, 100...) and the halfway point between consecutive squares are important resistance levels."}, {"c": "Resistance Levels", "q": "What's the rule connecting a stock's low price (odd or even) to which resistance squares it will hit?", "a": "A stock making its low on an odd number tends to work out to odd-number squares; one making its low on an even number tends to work out to even-number squares."}, {"c": "Resistance Levels", "q": "What signals that a bull campaign of 50+ points is nearing its end, per the 'major reactions' rule?", "a": "Once a reaction exceeds the single largest prior reaction on the move, or exceeds 1/12 of the total move made."}, {"c": "Resistance Levels", "q": "What sign of exhaustion should you watch for near the end of a campaign, in terms of move size?", "a": "Gains or declines that shrink move-over-move (e.g., 20 points, then 15, then 10) — a warning the top or bottom is near."}, {"c": "Resistance Levels", "q": "When two separate resistance points (like two different half-way points) fall near the same price, what should you do?", "a": "Average them together — the midpoint of the two levels is often itself a strong support/selling point."}, {"c": "Resistance Levels", "q": "On an extremely wide-range market, how do you find finer resistance points than the standard 1/8 division?", "a": "Divide the range by 16 or 32 instead of 8."}, {"c": "Geometric Angles", "q": "What is the single most important trend angle on a Gann chart?", "a": "The 45° angle (also called 1×1) — a gain or loss of exactly one point per time unit (day/week/month)."}, {"c": "Geometric Angles", "q": "What does it mean when a stock breaks below its 45° angle?", "a": "It's in a weak position; regaining the angle puts it back in a stronger position."}, {"c": "Geometric Angles", "q": "About how many points per month must a stock gain to hold above the 8×1 angle?", "a": "About 8 points per month — holding above it puts a stock in the strongest possible position."}, {"c": "Geometric Angles", "q": "What does the '2×1' angle represent, and what does it measure in degrees?", "a": "A rate of 2 points per time period, measuring 63¾° — it divides the space between the 45° angle and the vertical 90° angle in half."}, {"c": "Geometric Angles", "q": "When is the steep 16×1 angle typically used?", "a": "Only in fast-advancing markets, like the 1929 bull run."}, {"c": "Geometric Angles", "q": "What are the 'Cardinal Cross' angles?", "a": "90°, 180°, 270°, and 360°."}, {"c": "Geometric Angles", "q": "What are the 'Fixed Cross' angles?", "a": "45°, 135°, 225°, and 315°."}, {"c": "Geometric Angles", "q": "Converting price to circle degrees using $100 as par, what price equals a 90° angle?", "a": "25 (with 50=180°, 75=270°, and 100=360°)."}, {"c": "Geometric Angles", "q": "What's the rule about how far away a stop-loss should be when trading against the 45° angle?", "a": "Never more than 3 points away from the 45° angle."}, {"c": "Geometric Angles", "q": "What happens the farther a stock is from its base (in time and price) when it crosses an important angle?", "a": "The more significant the resulting change in trend."}, {"c": "Geometric Angles", "q": "Do angles carry more weight on daily charts, or on monthly/weekly charts?", "a": "Monthly and weekly charts carry more weight, because the daily trend reverses more frequently."}, {"c": "Geometric Angles", "q": "What are '0' angles, and what do they help prove?", "a": "Angles drawn starting from '0' at the same time-point as an actual bottom/top, rising at the same rate — they help prove when Time and Price are 'squaring out,' and often provide the last support/resistance after actual-price angles are broken."}, {"c": "Geometric Angles", "q": "What does it mean for Price and Time to 'square'?", "a": "The number of points a stock has moved equals the number of time periods (days/weeks/months) elapsed since its bottom or top — a high-probability point for a change in trend."}, {"c": "Geometric Angles", "q": "What happens when a stock crosses its 45° angle before the time-square has run out?", "a": "It will typically decline afterward to rest again on the 45° angle before a bigger move follows."}, {"c": "Geometric Angles", "q": "What are the bear-side (declining) equivalents of the 2×1 and 4×1 bull angles, in degrees?", "a": "2×1 down = 26¼°; 4×1 down = 15°."}, {"c": "Geometric Angles", "q": "How many degrees are in a circle, and does that change with the circle's size?", "a": "360 degrees, always — regardless of how big or small the circle is."}, {"c": "Time Cycles", "q": "What is Gann's 'Great Cycle' or Master Time Period?", "a": "60 years — the most important cycle of all, repeating at the end of the third 20-year cycle (e.g., the 1869 and 1929 panics, 60 years apart)."}, {"c": "Time Cycles", "q": "How long is the major stock market cycle, and what follows at its end?", "a": "Roughly 49-50 years, followed by a 'jubilee' period of extreme highs or lows lasting 5-7 years."}, {"c": "Time Cycles", "q": "Why is the number 7 considered a 'fatal number'?", "a": "7×7=49, tied to a roughly 7-year rhythm of contractions, depressions, and panics."}, {"c": "Time Cycles", "q": "What's the typical shape of a 5-year Bull Campaign, per Rule 1?", "a": "2 years up, 1 year down, 2 years up — watch especially for a change around the 59th-60th month."}, {"c": "Time Cycles", "q": "What does adding 10 years to any market top project?", "a": "The probable top of the next 10-year cycle, with similar average fluctuations (the same rule applies to bottoms)."}, {"c": "Time Cycles", "q": "How do bear campaigns often run out in a 7-year cycle?", "a": "As 3 years plus 4 years measured from a completed bottom."}, {"c": "Time Cycles", "q": "What does adding 5 years to a market top project?", "a": "The next bottom of a 5-year cycle (and adding 5 years to a bottom projects the next top)."}, {"c": "Time Cycles", "q": "Bull/bear campaigns seldom run more than how long in one direction without a countertrend move?", "a": "3 to 3.5 years, except at the end of Major Cycles."}, {"c": "Time Cycles", "q": "What's the recommended way to build an annual forecast for a given year?", "a": "Study the same calendar year from 10, 20, and (ideally) 30 years back, since the target year tends to run closest to the pattern from 10 years prior."}, {"c": "Time Cycles", "q": "What is considered the 'smallest complete' market cycle?", "a": "The 5-year cycle (half of the 10-year cycle)."}, {"c": "Time Cycles", "q": "What recurring day-of-month dates are natural trend-change points?", "a": "The 6th-7th, 9th-10th, 14th-15th, 19th-20th, 23rd-24th, and 29th-31st of the month."}, {"c": "Time Cycles", "q": "How long does a typical monthly reaction last in a strong bull market before the trend resumes?", "a": "No more than 2-3 weeks."}, {"c": "Time Cycles", "q": "Rank Time, Space (price), and Volume in order of importance in Gann's forecasting system.", "a": "Time is most important — no major move begins until sufficient time has elapsed; once time is 'up,' price movement and volume follow."}, {"c": "Time Cycles", "q": "In Gann's decade-digit calendar, what typically happens in a year ending in '5'?", "a": "It's the 'year of Ascension' — a very strong bull-market year."}, {"c": "Time Cycles", "q": "What typically happens in a year ending in '9'?", "a": "The strongest bull-market year of the decade — final bull campaigns typically culminate here, with the bear market starting Sept-Nov and a sharp decline following."}, {"c": "Time Cycles", "q": "What typically happens in a year ending in '0'?", "a": "A bear year — a rally often runs to March/April, then a severe decline runs to Nov/Dec, when a new cycle/rally begins."}, {"c": "Time Cycles", "q": "What typically happens in a year ending in '4'?", "a": "A bear year that ends the bear cycle and lays the foundation for the next bull market."}, {"c": "Time Cycles", "q": "What does the nine-point pre-trade checklist establish before making a trade?", "a": "The stock's cycle position, monthly/weekly/daily angle and time-period position, price resistance proximity, whether it's held level and nearing a break, volume trend, and the size of recent moves relative to its own pattern."}, {"c": "Time Cycles", "q": "How long, in months, is the 20-year cycle, and why is it so important?", "a": "240 months — most stocks and the major averages track closely to it."}, {"c": "Time Cycles", "q": "What's notable about the 1-year minor cycle?", "a": "It often shows a change in its 10th or 11th month."}, {"c": "Time Cycles", "q": "What major cycle is 30 years tied to astronomically?", "a": "Saturn's orbital period around the sun."}, {"c": "Time Cycles", "q": "When a stock or average holds in a narrow range for 2-13 weeks and then breaks out, what does the length of that range tell you?", "a": "The longer the time spent in the range, the greater the subsequent move."}, {"c": "Seasonal Dates", "q": "What date marks the start of the Winter Quarter in Gann's seasonal system, and why does it matter?", "a": "December 22 — the base date from which many other seasonal turn dates (Jan 5-6, Feb 5, etc.) are measured."}, {"c": "Seasonal Dates", "q": "Why is March 21st (the Spring equinox) an important seasonal date?", "a": "It's 90 days from December 22 — the Spring rally often starts or culminates around this date."}, {"c": "Seasonal Dates", "q": "Why is June 22nd significant?", "a": "It marks the start of Summer and is 93 days from March 21 (~90° of Sun travel) — directly opposite December 22 on the seasonal calendar."}, {"c": "Seasonal Dates", "q": "Why is September 23rd (the Fall equinox) important?", "a": "It's 93 days from June 22 and 180° opposite March 21 — a frequent site of trend change."}, {"c": "Seasonal Dates", "q": "Why is July 7th treated as a dividend-driven turning date?", "a": "It's 15 days from June 22 and 180 days (6 months) from January 7 — like January, a major dividend month."}, {"c": "Seasonal Dates", "q": "Why is November 8th historically a frequent date for tops/bottoms?", "a": "It's about 46 days (≈45°) from September 23rd."}, {"c": "Seasonal Dates", "q": "Besides the 30-day change point, what other recurring day-counts from a top/bottom are important?", "a": "The 7th, 10th, 14th, 20th, and 21st days, with natural variation to the 28th, 33rd, or 34th day due to lunar cycles interacting with the Sun's ~30-day sign changes."}, {"c": "Seasonal Dates", "q": "How does a company's own history create additional seasonal turn dates beyond the general calendar?", "a": "Its incorporation date or first-trading date becomes a personal base date, and its own 45°/90°/135°-anniversary dates from that base recur as trend-change dates."}, {"c": "Seasonal Dates", "q": "What happens to seasonal-date counting once a base date's associated top/bottom is exceeded?", "a": "Counting should shift to the next relevant base — the same 'discontinue' rule that applies to broken angles."}, {"c": "Seasonal Dates", "q": "Why are early January (2nd-7th, 15th-21st) and early July (3rd-7th, 20th-27th) especially important seasonal windows?", "a": "Highs/lows made in these periods often hold for many months — January extremes often aren't broken until July or August."}, {"c": "Seasonal Dates", "q": "What is a 'Natural Seasonal Time Period,' and from what date should it be measured?", "a": "A division of the year (1/8, 1/4, 1/3, 1/2, etc.) measured from March 21 (start of Spring) rather than from January 1."}, {"c": "Seasonal Dates", "q": "Which calendar month has historically shown the greatest number of extreme lows?", "a": "December — 30 extreme lows over a 62-year study period, making it historically the most important month to watch for a sharp decline."}, {"c": "Seasonal Dates", "q": "What's the significance of a stock closing higher for 4 consecutive weeks?", "a": "It tends to continue higher, with the 5th week (the 'week of Ascension') also being pivotal for a fast move."}, {"c": "Seasonal Dates", "q": "What natural cycle explains why the 7th week (about 45 days, or 1/8 of a year) is significant?", "a": "Dividing the year by 8 gives 45 days — this is why so many moves reverse around the 7-week mark."}, {"c": "Volume of Sales", "q": "What does volume of sales represent in Gann's framework?", "a": "The real driving power behind the market — it shows whether supply or demand is increasing or decreasing."}, {"c": "Volume of Sales", "q": "What typically happens to volume at the end of a prolonged bull campaign?", "a": "A large increase in volume, marking (at least temporarily) the end of the campaign."}, {"c": "Volume of Sales", "q": "What volume pattern confirms that a final top has been made?", "a": "A sharp decline on heavy volume followed by a secondary rally on decreasing volume."}, {"c": "Volume of Sales", "q": "What volume pattern signals that a bottom is forming after a prolonged decline?", "a": "Volume of trading decreases and the fluctuation range narrows — a sign that liquidation is running its course."}, {"c": "Volume of Sales", "q": "What volume signal after a bear-market bottom suggests a further advance to higher levels?", "a": "A secondary reaction on decreasing volume, followed by an advance on heavier volume."}, {"c": "Volume of Sales", "q": "In general, is volume of sales normally greater during advances or during declines?", "a": "Advances — because they attract more wash sales, pool operations, and manipulation than declines do."}, {"c": "Volume of Sales", "q": "What warning sign in 'volume per point' suggests a market is nearing its top?", "a": "A rising average of shares traded per point of price movement while the point-gain itself is slowing — the same or greater volume buying fewer points of advance."}, {"c": "Volume of Sales", "q": "Is the actual high of a move usually made on the largest volume of the whole advance?", "a": "No — the largest volume often occurs before the final top; the actual high is frequently made on smaller volume than in the preceding weeks or months."}, {"c": "Volume of Sales", "q": "What's an exception to the 'volume increases near tops, decreases near bottoms' rule?", "a": "Abnormal, fast-moving markets (like Oct-Nov 1929), where a sharp bottom can culminate on huge volume followed by a swift rebound."}, {"c": "Volume of Sales", "q": "Do the volume-of-sales rules apply only to individual stocks, or also to the whole exchange?", "a": "Both — they apply to total daily/weekly/monthly exchange sales as well as to individual stocks."}, {"c": "Master Calculators & Charts", "q": "What is the 'Great Square' that the Master Calculator is built on, and why is it useful?", "a": "The Square of 144 (12×12) — it works best for both time and price because it contains all the squares from 1 to 144."}, {"c": "Master Calculators & Charts", "q": "What are Gann's five 'Master Numbers,' and which is most important?", "a": "3, 5, 7, 9, and 12 — 9 is most important because its digits sum to 45 (via 9x1..9x9 patterns)."}, {"c": "Master Calculators & Charts", "q": "What four factors does Gann say influence prices, and which is most important?", "a": "Time, Price, Volume, and Velocity/Pitch (the trend angle) — Time is most important, since when a time cycle completes, volume and the trend angle both increase."}, {"c": "Master Calculators & Charts", "q": "What does it mean for a chart to close 'above the halfway point'?", "a": "It indicates an up trend, at least temporarily (closing below the halfway point indicates a down trend)."}, {"c": "Master Calculators & Charts", "q": "What is the Square of Nine built on, and what key angle does it produce?", "a": "Dividing the 360° circle by 9, which gives 40° as an important recurring angle (and 40 days/weeks/months as a recurring time unit)."}, {"c": "Master Calculators & Charts", "q": "What does the 'Six Squares of Nine' cube analogy represent?", "a": "A market cycle modeled as a structure: the first square (81 numbers) is the base, the middle four squares are the four walls, and the sixth square is the top."}, {"c": "Master Calculators & Charts", "q": "In the Master 12/144 system, what's the 'death zone'?", "a": "The 8th and 9th sections of the square — the hardest points for a stock to pass through."}, {"c": "Master Calculators & Charts", "q": "How is a stock or exchange's own 'Permanent Chart' derived?", "a": "From a base number tied to its name (letter count) or founding/incorporation date — e.g., U.S. Steel's 17-letter name gives a Square of 17×17=289 for its own resistance levels."}, {"c": "Master Calculators & Charts", "q": "What does the Spiral Chart illustrate about a stock as its price rises?", "a": "As price moves outward from the center, it requires progressively larger point moves to strike the next 45° angle — explaining why stocks swing faster at higher price levels."}, {"c": "Master Calculators & Charts", "q": "What does the Hexagon Chart demonstrate about market movement?", "a": "That everything moves in a circle rather than a straight line, and stocks fluctuate faster the higher they get, because 45° angles are spaced farther apart in price at higher levels."}, {"c": "Master Calculators & Charts", "q": "What number completes the 'first Hexagon,' and what does it explain?", "a": "127 (months) — it explains why some campaigns run about 10 years and 7 months before hitting a major 45° resistance angle."}, {"c": "Master Calculators & Charts", "q": "Why is 169 an important Hexagon time factor?", "a": "It equals 14 years 1 month — double the 7-year cycle."}, {"c": "Master Calculators & Charts", "q": "What's the Master Calculator for Weekly Time Periods built on, and roughly how long does its square take to complete?", "a": "The Square of 52 (=2,704) — about 7 years 5 months, close to the important 7.5-year (90-month) cycle."}, {"c": "Master Calculators & Charts", "q": "What are the three ways to 'square' or balance time and price on the weekly Master Calculator?", "a": "(1) Balance the lowest price with elapsed time in weeks, and the highest price likewise; (2) balance the total range between high and low; (3) balance price and time together for the '4th dimension.'"}, {"c": "Master Calculators & Charts", "q": "Why must time periods always be counted from the actual date of a high or low, rather than the 1st of a month or year?", "a": "Because Gann's time-cycle rules are anchored to the real turning-point date — starting from an arbitrary calendar date would throw off every subsequent count."}, {"c": "Master Calculators & Charts", "q": "What's the relationship between the 360° circle and the Square of 144?", "a": "They're directly proportional — 2.5×144=360 and 1.25×144=180 (half the circle) — so the same key resistance numbers (9, 18, 27... 144) apply to both systems."}, {"c": "Puts & Calls", "q": "What is a CALL option, in Gann's terms?", "a": "A contract to buy a stock at a fixed price within a set period (traditionally 30 days)."}, {"c": "Puts & Calls", "q": "What is a PUT option?", "a": "A contract to sell (deliver) a stock at a fixed price within a set period."}, {"c": "Puts & Calls", "q": "What is a SPREAD (straddle)?", "a": "Buying both a PUT and a CALL on the same stock at the same time — used when a big move is expected but the direction is uncertain."}, {"c": "Puts & Calls", "q": "What's the main advantage of buying puts/calls over buying stock on margin?", "a": "Risk is strictly limited to the premium paid, no interest accrues, and the percentage return on capital risked is typically far higher."}, {"c": "Puts & Calls", "q": "How can a put or call be used instead of a stop-loss order?", "a": "It guarantees an exact protective price regardless of overnight gaps, whereas a stop-loss can be executed several points worse than intended if the stock gaps through it."}, {"c": "Puts & Calls", "q": "According to Gann's timing rules, when should you buy a CALL around a chart formation?", "a": "Around double/triple bottoms (buy a PUT around double/triple tops)."}, {"c": "Puts & Calls", "q": "What's Gann's rule for buying a CALL after a breakout?", "a": "Buy a CALL when a stock breaks out above an old top level held for weeks/months/years (buy a PUT on a broken support level)."}, {"c": "Puts & Calls", "q": "What price zone does Gann recommend as best for buying puts and calls?", "a": "$75-$150 per share — stocks move noticeably faster (and more profitably for options) at higher price levels."}, {"c": "Puts & Calls", "q": "What's the most reliable, repeatedly cited put/call signal in the course?", "a": "A breakout from a long, narrow congested trading range — buy a call on a breakout up, or a put on a breakdown."}, {"c": "Puts & Calls", "q": "How does selling a PUT effectively let you buy a stock below the current market?", "a": "You collect the premium immediately; if the stock declines to the strike, it's 'put' to you at that lower price, with the premium reducing your net cost."}, {"c": "Puts & Calls", "q": "What is a 'protective collar'?", "a": "Buying a PUT while simultaneously selling a CALL against a long stock position — it caps both downside risk and upside profit, at a much lower net cost than buying a put alone."}, {"c": "Puts & Calls", "q": "About what deposit does a broker typically require to sell (write) puts or calls?", "a": "About 30% of the value of the underlying stock (or the stock itself as collateral for a call)."}];
+
+const CATEGORY_ORDER = [
+  "Trading Rules & Risk",
+  "Trend & Chart Reading",
+  "Resistance Levels",
+  "Geometric Angles",
+  "Time Cycles",
+  "Seasonal Dates",
+  "Volume of Sales",
+  "Master Calculators & Charts",
+  "Puts & Calls"
+];
+
+FLASHCARDS.forEach((c,i)=>{ c.id = i; });
+
+const STORAGE_KEY = "gannFlashcardsProgressV1";
+function loadProgress(){
+  try{
+    const raw = localStorage.getItem(STORAGE_KEY);
+    return raw ? JSON.parse(raw) : {};
+  }catch(e){ return {}; }
+}
+function saveProgress(p){
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(p));
+}
+let progress = loadProgress();
+
+let currentDeck = "All";
+let order = [];
+let pos = 0;
+let flipped = false;
+
+const deckSelect = document.getElementById('deckSelect');
+const cardslot = document.getElementById('cardslot');
+const gradebar = document.getElementById('gradebar');
+const counterEl = document.getElementById('counter');
+const progressFill = document.getElementById('progressFill');
+const deckCountLabel = document.getElementById('deckCountLabel');
+const knownCountEl = document.getElementById('knownCount');
+const learningCountEl = document.getElementById('learningCount');
+const toastEl = document.getElementById('toast');
+
+function buildDeckOptions(){
+  const opt0 = document.createElement('option');
+  opt0.value = "All";
+  opt0.textContent = "All decks (" + FLASHCARDS.length + " cards)";
+  deckSelect.appendChild(opt0);
+  CATEGORY_ORDER.forEach(cat=>{
+    const n = FLASHCARDS.filter(c=>c.c===cat).length;
+    if(n===0) return;
+    const opt = document.createElement('option');
+    opt.value = cat;
+    opt.textContent = cat + " (" + n + ")";
+    deckSelect.appendChild(opt);
+  });
+}
+
+function cardsForDeck(deck){
+  if(deck==="All") return FLASHCARDS.map(c=>c.id);
+  return FLASHCARDS.filter(c=>c.c===deck).map(c=>c.id);
+}
+
+function shuffle(arr){
+  for(let i=arr.length-1;i>0;i--){
+    const j = Math.floor(Math.random()*(i+1));
+    [arr[i],arr[j]] = [arr[j],arr[i]];
+  }
+  return arr;
+}
+
+function setDeck(deck, doShuffle){
+  currentDeck = deck;
+  order = cardsForDeck(deck);
+  if(doShuffle) shuffle(order);
+  pos = 0;
+  flipped = false;
+  renderCard();
+  updateStats();
+}
+
+function currentCard(){
+  return FLASHCARDS[order[pos]];
+}
+
+function renderCard(){
+  cardslot.innerHTML = "";
+  gradebar.classList.remove('show');
+  flipped = false;
+  if(order.length===0){
+    cardslot.innerHTML = '<div class="done">No cards in this deck.</div>';
+    counterEl.textContent = "0 / 0";
+    return;
+  }
+  const c = currentCard();
+  const div = document.createElement('div');
+  div.className = 'card';
+  div.id = 'activeCard';
+  div.innerHTML = `
+    <div class="face front">
+      <div class="tag">${c.c}</div>
+      <div class="label">Question</div>
+      <div class="body">${c.q}</div>
+      <div class="hint">Tap or swipe to flip</div>
+    </div>
+    <div class="face back">
+      <div class="tag">${c.c}</div>
+      <div class="label">Answer</div>
+      <div class="body">${c.a}</div>
+      <div class="hint">Tap to flip back</div>
+    </div>
+  `;
+  div.addEventListener('click', (e)=>{
+    if(Math.abs(dragDX) > 8) return;
+    toggleFlip();
+  });
+  cardslot.appendChild(div);
+  attachSwipe(div);
+  counterEl.textContent = (pos+1) + " / " + order.length;
+}
+
+function toggleFlip(){
+  const el = document.getElementById('activeCard');
+  if(!el) return;
+  flipped = !flipped;
+  el.classList.toggle('flipped', flipped);
+  if(flipped){
+    setTimeout(()=>gradebar.classList.add('show'), 180);
+  }else{
+    gradebar.classList.remove('show');
+  }
+}
+
+let dragStartX = 0, dragDX = 0, dragging = false;
+function attachSwipe(el){
+  el.addEventListener('touchstart', (e)=>{
+    dragging = true;
+    dragStartX = e.touches[0].clientX;
+    dragDX = 0;
+    el.style.transition = 'none';
+  }, {passive:true});
+  el.addEventListener('touchmove', (e)=>{
+    if(!dragging) return;
+    dragDX = e.touches[0].clientX - dragStartX;
+    const rot = flipped ? 180 : 0;
+    el.style.transform = `translateX(${dragDX}px) rotateY(${rot}deg) rotate(${dragDX/20}deg)`;
+  }, {passive:true});
+  el.addEventListener('touchend', ()=>{
+    dragging = false;
+    el.style.transition = '';
+    el.style.transform = '';
+    if(dragDX < -70){ goNext(true); }
+    else if(dragDX > 70){ goPrev(true); }
+    setTimeout(()=>{ dragDX = 0; }, 50);
+  });
+
+  // mouse drag for desktop testing
+  let mouseDown = false, mouseStartX = 0, mouseDX = 0;
+  el.addEventListener('mousedown', (e)=>{ mouseDown = true; mouseStartX = e.clientX; mouseDX = 0; dragDX = 0; });
+  window.addEventListener('mousemove', (e)=>{
+    if(!mouseDown) return;
+    mouseDX = e.clientX - mouseStartX;
+    dragDX = mouseDX;
+    const rot = flipped ? 180 : 0;
+    el.style.transform = `translateX(${mouseDX}px) rotateY(${rot}deg) rotate(${mouseDX/20}deg)`;
+  });
+  window.addEventListener('mouseup', ()=>{
+    if(!mouseDown) return;
+    mouseDown = false;
+    el.style.transform = '';
+    if(mouseDX < -70){ goNext(true); }
+    else if(mouseDX > 70){ goPrev(true); }
+    setTimeout(()=>{ dragDX = 0; mouseDX = 0; }, 50);
+  });
+}
+
+function goNext(fromSwipe){
+  if(order.length===0) return;
+  pos = (pos+1) % order.length;
+  renderCard();
+}
+function goPrev(fromSwipe){
+  if(order.length===0) return;
+  pos = (pos-1+order.length) % order.length;
+  renderCard();
+}
+
+function grade(status){
+  if(order.length===0) return;
+  const c = currentCard();
+  progress[c.id] = status;
+  saveProgress(progress);
+  updateStats();
+  showToast(status==='known' ? 'Marked as known' : 'Marked as still learning');
+  goNext();
+}
+
+function updateStats(){
+  const idsInDeck = order;
+  let known = 0, learning = 0;
+  idsInDeck.forEach(id=>{
+    if(progress[id]==='known') known++;
+    else if(progress[id]==='learning') learning++;
+  });
+  const total = idsInDeck.length;
+  const pct = total ? Math.round((known/total)*100) : 0;
+  progressFill.style.width = pct + '%';
+  deckCountLabel.textContent = total + ' card' + (total===1?'':'s') + (currentDeck==='All' ? '' : ' • ' + currentDeck);
+  knownCountEl.textContent = known;
+  learningCountEl.textContent = learning;
+}
+
+let toastTimer = null;
+function showToast(msg){
+  toastEl.textContent = msg;
+  toastEl.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(()=>toastEl.classList.remove('show'), 1100);
+}
+
+document.getElementById('gradeKnown').addEventListener('click', ()=>grade('known'));
+document.getElementById('gradeLearning').addEventListener('click', ()=>grade('learning'));
+document.getElementById('nextBtn').addEventListener('click', ()=>goNext(false));
+document.getElementById('prevBtn').addEventListener('click', ()=>goPrev(false));
+document.getElementById('shuffleTop').addEventListener('click', ()=>{
+  shuffle(order);
+  pos = 0;
+  renderCard();
+  showToast('Shuffled');
+});
+document.getElementById('resetBtn').addEventListener('click', ()=>{
+  if(confirm('Reset all progress (known / still learning marks) for every deck?')){
+    progress = {};
+    saveProgress(progress);
+    updateStats();
+    showToast('Progress reset');
+  }
+});
+deckSelect.addEventListener('change', (e)=>{
+  setDeck(e.target.value, false);
+});
+
+document.addEventListener('keydown', (e)=>{
+  if(e.key === 'ArrowRight') goNext(false);
+  else if(e.key === 'ArrowLeft') goPrev(false);
+  else if(e.key === ' '){ e.preventDefault(); toggleFlip(); }
+  else if(e.key === '1') grade('learning');
+  else if(e.key === '2') grade('known');
+});
+
+buildDeckOptions();
+setDeck('All', false);
+</script>
+</body>
+</html>
